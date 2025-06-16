@@ -10,5 +10,8 @@
 ## Tools Used
 - Excel
 
+  SQL – Querying the Cleaned Data
+  Python – Visualization + Optional Modeling
+
 
 
