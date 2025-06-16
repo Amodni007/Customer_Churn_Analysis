@@ -1,0 +1,53 @@
+SELECT * FROM telco_customers LIMIT 10;
+-- How many rows (customers) are in the table?
+SELECT COUNT(*) FROM telco_customers;
+
+-- See all columns in the table
+PRAGMA table_info(telco_customers);
+
+-- How many customers churned vs not churned?
+SELECT field21 AS Churn, COUNT(*) AS total
+FROM telco_customers
+GROUP BY field21;
+
+-- What is the average monthly charge?
+SELECT AVG(field19) AS avg_charge
+FROM telco_customers;
+
+-- What is the average tenure for churned customers?
+SELECT field21, AVG(field6) AS avg_tenure
+FROM telco_customers
+GROUP BY field21;
+
+-- Churn count by contract type
+SELECT field16, field21, COUNT(*) AS total
+FROM telco_customers
+GROUP BY field16, field21;
+
+-- Churn count by payment method
+SELECT field18, field21, COUNT(*) AS total
+FROM telco_customers
+GROUP BY field18, field21;
+
+-- Churn by gender
+SELECT field2, field21, COUNT(*) AS total
+FROM telco_customers
+GROUP BY field2, field21;
+
+-- Creating Tenure Bucket(0–12, 13–24, 25+ months), This query groups people into time categories and shows how many churned in each.
+SELECT
+  CASE 
+    WHEN field6 <= 12 THEN '0-12 months'
+    WHEN field6 <= 24 THEN '13-24 months'
+    WHEN field6 <= 36 THEN '25-36 months'
+    ELSE '36+ months'
+  END AS tenure_group,
+  field21,
+  COUNT(*) AS total
+FROM telco_customers
+GROUP BY tenure_group, field21;
+
+
+
+
+
