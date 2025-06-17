@@ -1,6 +1,17 @@
 #  Customer Churn Analysis Project : Using Excel, SQL, and Python
 This project explores customer churn behavior using a telecom dataset. The aim is to understand why customers leave and help businesses reduce churn. It combines Excel, SQL, and Python for a complete data analysis workflow.
 
+## 📊 Tools Used
+- **Excel**: Cleaning, PivotTables, Charts
+- **SQL (SQLite)**: Query-based analysis
+- **Python (Pandas, Seaborn, Sklearn)**: Visuals, heatmaps, modeling
+
+  ## 🔍 Key Business Insights
+- 📉 Month-to-month contracts have the **highest churn rate**
+- 💳 Customers paying via **electronic check** churn more
+- 📈 Customers with **longer tenure** are more likely to stay
+- 📊 Features like **Tech Support**, **Internet Service**, and **Contract Type** are strong churn predictors
+
 ##  Excel Work : Data Cleaning + Basic EDA
 
 - **Data Cleaning**:
@@ -33,6 +44,26 @@ This project explores customer churn behavior using a telecom dataset. The aim i
 
 
  ## Python – Visualization + Optional Modeling
+ Tool Used: Jupyter Notebook
+ - **Data Loading and Inspection**:
+  - Loaded cleaned CSV with `pandas`
+  - Used `df.info()`, `df.describe()`, and null checks
+
+- **Data Exploration**:
+  - Analyzed churn percentages
+  - Created crosstabs: Gender vs Churn, Contract vs Churn
+
+- **Data Visualization** (with `matplotlib` & `seaborn`):
+  - Count plots for churn by contract/payment method
+  - Tenure distribution histogram
+  - Correlation heatmap to identify relationships
+
+- **(Optional) Logistic Regression Model**:
+  - Built a basic model with `sklearn` to predict churn
+  - Used `MonthlyCharges` and `Tenure` as predictors
+  - Evaluated accuracy on a test set
+
+- Saved analysis in: `churn_analysis.ipynb`
 
 
 
